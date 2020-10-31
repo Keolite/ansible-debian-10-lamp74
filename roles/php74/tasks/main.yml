@@ -33,7 +33,17 @@
     
 - name: enabled mod_rewrite
   apache2_module: 
-    name=alias proxy proxy_fcgi
+    name=alias
+    state=present
+    
+- name: enabled mod_rewrite
+  apache2_module: 
+    name=proxy
+    state=present
+    
+- name: enabled mod_rewrite
+  apache2_module: 
+    name=proxy_fcgi
     state=present
     
 - name: Configuration php
