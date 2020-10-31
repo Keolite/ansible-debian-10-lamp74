@@ -2,4 +2,5 @@
   roles:
     - utilitaires
     - mariadb_10_5
+    - apache2
     - module_apache
