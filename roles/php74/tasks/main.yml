@@ -28,22 +28,7 @@
       - php7.4-ctype
       - php7.4-xml
       - php7.4-fpm
-    state: present
-    
-- name: enabled mod_rewrite
-  apache2_module: 
-    name=alias
-    state=present
-    
-- name: enabled mod_rewrite
-  apache2_module: 
-    name=proxy
-    state=present
-    
-- name: enabled mod_rewrite
-  apache2_module: 
-    name=proxy_fcgi
-    state=present
+    state: present 
     
 - name: Configuration php
   become: true
