@@ -11,7 +11,7 @@
   register: php_ondrej_debian_repo
   when: ansible_distribution == "Debian"
   
-  - name: php and modules
+- name: php and modules
   apt:
     pkg:
       - php7.4   
