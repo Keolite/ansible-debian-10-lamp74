@@ -7,7 +7,7 @@
       - dirmngr
   
 - name: Ajoute key
-  command: https://mariadb.org/mariadb_release_signing_key.asc  
+  command: apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'
   
 - name: Add MariaDB Repo
   apt_repository:
