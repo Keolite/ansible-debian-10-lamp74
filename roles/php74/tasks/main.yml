@@ -62,7 +62,7 @@
     - { section: PHP, option: upload_max_filesize, value: 500 }
     - { section: PHP, option: max_input_time, value: 360 }
     
-  notify: "apache2 restart"
+
     
     
   
