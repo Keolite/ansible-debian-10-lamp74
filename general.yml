@@ -3,5 +3,5 @@
     - utilitaires
     - mariadb_10_5
     - apache2
+    - php74    
     - module_apache2
-    - php74
