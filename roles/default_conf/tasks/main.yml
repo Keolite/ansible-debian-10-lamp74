@@ -1,4 +1,4 @@
 - name: add subdomaine
   template:
     src: 000_default_conf.j2
-    dest: "/etc/apache2/sites-available/adminer.localhost.conf"
+    dest: "/etc/apache2/sites-available/000-default.conf"
