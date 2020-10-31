@@ -1,0 +1,75 @@
+- name: Add apt key.
+  apt_key:
+    url: https://packages.sury.org/php/apt.gpg
+    state: present
+  when: ansible_distribution == "Debian"
+
+- name: Add repo.
+  apt_repository:
+    repo: "deb https://packages.sury.org/php/ {{ ansible_distribution_release }} main"
+    state: present
+  register: php_ondrej_debian_repo
+  when: ansible_distribution == "Debian"
+  
+  - name: php and modules
+  apt:
+    pkg:
+      - php7.4   
+      - php7.4-cli
+      - php7.4-mysql
+      - php7.4-curl
+      - php7.4-gd
+      - php7.4-imagick
+      - php7.4-recode
+      - php7.4-tidy
+      - php7.4-xmlrpc
+      - php7.4-zip
+      - php7.4-mbstring
+      - php7.4-intl
+      - php7.4-ctype
+      - php7.4-xml
+      - php7.4-fpm
+    state: present
+    
+- name: enabled mod_rewrite
+  apache2_module: 
+    name=alias proxy proxy_fcgi
+    state=present
+    
+- name: Configuration php
+  become: true
+  ini_file:
+    dest: /etc/php/7.4/cli/php.ini
+    section: "{{ item.section }}"
+    option: "{{ item.option }}"
+    value: "{{ item.value }}"
+  with_items:
+    - { section: Date, option: date.timezone, value: Europe/Paris }
+    - { section: PHP, option: max_execution_time, value: 360 }
+    - { section: PHP, option: memory_limit, value: 512M }
+    - { section: PHP, option: display_errors, value: On }
+    - { section: PHP, option: post_max_size, value: 64 }
+    - { section: PHP, option: upload_max_filesize, value: 500 }
+    - { section: PHP, option: max_input_time, value: 360 }
+    
+- name: Configuration php
+  become: true
+  ini_file:
+    dest: /etc/php/7.4/fpm/php.ini
+    section: "{{ item.section }}"
+    option: "{{ item.option }}"
+    value: "{{ item.value }}"
+  with_items:
+    - { section: Date, option: date.timezone, value: Europe/Paris }
+    - { section: PHP, option: max_execution_time, value: 360 }
+    - { section: PHP, option: memory_limit, value: 512M }
+    - { section: PHP, option: display_errors, value: On }
+    - { section: PHP, option: post_max_size, value: 64 }
+    - { section: PHP, option: upload_max_filesize, value: 500 }
+    - { section: PHP, option: max_input_time, value: 360 }
+    
+  notify: "apache2 restart"
+    
+    
+  
+  
