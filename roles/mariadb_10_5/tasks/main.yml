@@ -27,7 +27,7 @@
 - name : Mise à jour du user Root
   mysql_user:
     name: root
-    password: "{{ pwddb }}"
+    password: "{{ password_root_mysql }}"
     update_password: always
     host: 'localhost'
     state: present
@@ -35,31 +35,31 @@
 - name: Secure the root user for IPV6 localhost (::1)
   mysql_user:
     login_user: root
-    login_password: "{{ pwddb }}"
+    login_password: "{{ password_root_mysql }}"
     user: root
-    password: "{{ pwddb }}"
+    password: "{{ password_root_mysql }}"
     host: ::1
 
 - name: Secure the root user for IPV4 localhost (127.0.0.1)
   mysql_user:
     login_user: root
-    login_password: "{{ pwddb }}"
+    login_password: "{{ password_root_mysql }}"
     user: root
-    password: "{{ pwddb }}"
+    password: "{{ password_root_mysql }}"
     host: 127.0.0.1
 
 - name: Secure the root user for localhost domain
   mysql_user:
     login_user: root
-    login_password: "{{ pwddb }}"
+    login_password: "{{ password_root_mysql }}"
     user: root
-    password: "{{ pwddb }}"
+    password: "{{ password_root_mysql }}"
     host: localhost
 
 - name: Deletes anonymous server user
   mysql_user:
     login_user: root
-    login_password: "{{ pwddb }}"
+    login_password: "{{ password_root_mysql }}"
     user: ""
     host_all: yes
     state: absent
@@ -67,6 +67,6 @@
 - name: Removes the test database
   mysql_db:
     login_user: root
-    login_password: "{{ pwddb }}"
+    login_password: "{{ password_root_mysql }}"
     db: test
     state: absent
