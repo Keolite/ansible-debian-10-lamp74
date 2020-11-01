@@ -1,9 +1,11 @@
 - hosts: all
+  vars_files:
+    - vars/main.yml
   roles:
     - utilitaires
     - mariadb_10_5
     - apache2
     - php74
-    - default_conf
+    - hostname_conf
     - module_apache2
     
