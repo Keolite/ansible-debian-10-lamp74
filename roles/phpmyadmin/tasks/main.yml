@@ -1,0 +1,6 @@
+- name: Unarchive a file that needs to be downloaded (added in 2.0)
+  unarchive:
+    src: {{ url_phpmyadmin }}
+    dest: /var/www/html
+    remote_src: yes
+
