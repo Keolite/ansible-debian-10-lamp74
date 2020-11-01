@@ -6,6 +6,7 @@
     - mariadb_10_5
     - apache2
     - php74
+    - phpmyadmin
     - hostname_conf
     - module_apache2
     
