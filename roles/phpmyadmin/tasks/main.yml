@@ -1,9 +1,9 @@
 - name: Unarchive a file that needs to be downloaded (added in 2.0)
   unarchive:
     src: "{{ url_phpmyadmin }}"
-    dest: /var/www/html
+    dest: /var/www/html/phpmyadmin
     remote_src: yes
 
-- name: Move foo to bar
-  command: mv /var/www/html/"{{ url_phpmyadmin }}"  /var/www/html/phpmyadmin
+#- name: Move foo to bar
+#  command: mv /var/www/html/"{{ url_phpmyadmin }}"  /var/www/html/phpmyadmin
 
