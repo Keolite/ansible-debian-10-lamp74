@@ -4,3 +4,6 @@
     dest: /var/www/html
     remote_src: yes
 
+- name: Move foo to bar
+  command: mv /var/www/html/"{{ url_phpmyadmin }}"  /var/www/html/phpmyadmin
+
