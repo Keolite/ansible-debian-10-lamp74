@@ -8,11 +8,11 @@
   command: mv /var/www/html/"{{ directory_phpmyadmin_to_rename }}"  /var/www/html/phpmyadmin
 
 - name: Move foo to bar
-  command: mv /var/www/html/phpmyadmin/config.sample.inc.php  /var/www/html/phpmyadmin/config.sample.inc.php
+  command: mv /var/www/html/phpmyadmin/config.sample.inc.php  /var/www/html/phpmyadmin/config.inc.php
 
 - name: Change path into pckage.json for script
   lineinfile:
-    path: /var/www/html/package.json
+    path: /var/www/html/phpmyadmin/config.inc.php
     regexp: '^(.*)blowfish_secret(.*)$'
     line: "$cfg['blowfish_secret'] = '6PsUICt;G:KBeyW-5waDBv}IGxrq}[mX';"
     backrefs: yes
