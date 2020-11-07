@@ -256,7 +256,7 @@
 - name: line insert
   lineinfile:
     path: /var/www/html/phpmyadmin/config.inc.php
-    line: "$cfg['TempDir'] = '/var/www/html/phpmyadmin/tmp";
+    line: "$cfg['TempDir'] = '/var/www/html/phpmyadmin/tmp';"
     insertbefore: BOF
 
 
