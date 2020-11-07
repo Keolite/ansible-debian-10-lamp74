@@ -19,3 +19,10 @@
   become: yes
   become_user: www-data
 
+- name: Change path into pckage.json for script
+  lineinfile:
+    path: /var/www/html/phpmyadmin/config.inc.php
+    regexp: "^(.*)\/\/ $cfg['Servers'][$i]['controluser'](.*)$"
+    line: "$cfg['Servers'][$i]['controluser'] = 'pma';"
+    backrefs: yes
+
