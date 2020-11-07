@@ -25,8 +25,8 @@
     regexp: '^(.*)controlpass(.*)$'
     line: "$cfg['Servers'][$i]['controluser'] = 'pma';"
     backrefs: yes
-    become: yes
-    become_user: www-data
+  become: yes
+  become_user: www-data
 
 - name: Change path into pckage.json for script
   lineinfile:
@@ -34,7 +34,7 @@
     regexp: '^(.*)controluser(.*)$'
     line: "$cfg['Servers'][$i]['controlpass'] = 'pmapass';"
     backrefs: yes
-    become: yes
-    become_user: www-data
+  become: yes
+  become_user: www-data
 
 
