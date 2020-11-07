@@ -222,10 +222,14 @@
   mysql_db:
     name: phpmyadmin
     state: present
+    login_user: root
+    login_password: "{{ pwddb }}"
+    encoding: "utf8"
 
 - name: Restore database
   mysql_db:
-    name: phpmyadmin
+    login_user: root
+    login_password: "{{ pwddb }}"
     state: import
     target: /var/www/html/phpmyadmin/sql/create_tables.sql
 
