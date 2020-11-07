@@ -239,7 +239,7 @@
     login_user: root
     login_password: "{{ password_root_mysql }}"
     host: "localhost"
-    name: 'phpmyadmin'
+    name: 'pma'
     password: '4321'
     priv: 'phpmyadmin.*:ALL'
     state: present
@@ -257,7 +257,7 @@
   lineinfile:
     path: /var/www/html/phpmyadmin/config.inc.php
     line: "$cfg['TempDir'] = '/var/www/html/phpmyadmin/tmp';"
-    insertbefore: BOF
+    insertafter: EOF
 
 
 
