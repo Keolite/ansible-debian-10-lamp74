@@ -258,6 +258,8 @@
     path: /var/www/html/phpmyadmin/config.inc.php
     line: "$cfg['TempDir'] = '/var/www/html/phpmyadmin/tmp';"
     insertafter: EOF
+  become: yes
+  become_user: www-data
 
 
 
