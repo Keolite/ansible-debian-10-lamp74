@@ -223,13 +223,13 @@
     name: phpmyadmin
     state: present
     login_user: root
-    login_password: "{{ pwddb }}"
+    login_password: "{{ password_root_mysql }}"
     encoding: "utf8"
 
 - name: Restore database
   mysql_db:
     login_user: root
-    login_password: "{{ pwddb }}"
+    login_password: "{{ password_root_mysql }}"
     state: import
     target: /var/www/html/phpmyadmin/sql/create_tables.sql
 
