@@ -218,5 +218,16 @@
   become: yes
   become_user: www-data
 
+- name: Create a new database with name 'bobdata'
+  mysql_db:
+    name: phpmyadmin
+    state: present
+
+- name: Restore database
+  mysql_db:
+    name: phpmyadmin
+    state: import
+    target: /var/www/html/phpmyadmin/sql/create_tables.sql
+
 
 
