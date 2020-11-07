@@ -16,7 +16,6 @@
     regexp: '^(.*)blowfish_secret(.*)$'
     line: "$cfg['blowfish_secret'] = '6PsUICt;G:KBeyW-5waDBv}IGxrq}[mX';"
     backrefs: yes
-  when: "{{ installSassLoader }} == true"
   become: yes
-  become_user: vagrant
+  become_user: www-data
 
