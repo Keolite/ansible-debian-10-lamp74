@@ -254,10 +254,10 @@
   become_user: www-data
 
 - name: line insert
-    lineinfile:
-      path: /var/www/html/phpmyadmin/config.inc.php
-      line: "$cfg['TempDir'] = '/var/www/html/phpmyadmin/tmp";
-      insertbefore: BOF
+  lineinfile:
+    path: /var/www/html/phpmyadmin/config.inc.php
+    line: "$cfg['TempDir'] = '/var/www/html/phpmyadmin/tmp";
+    insertbefore: BOF
 
 
 
