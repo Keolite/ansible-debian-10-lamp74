@@ -2,3 +2,11 @@
   template:
     src: 000_default_conf.j2
     dest: "/etc/apache2/sites-available/000-default.conf"
+
+- name: add subdomaine
+  template:
+    src: mysql_conf.j2
+    dest: "/etc/apache2/sites-available/mysql.dev.vm.conf"
+
+- name: a2ensite {{ mysql_hostname }}
+  command: a2ensite {{ mysql_hostname }}
