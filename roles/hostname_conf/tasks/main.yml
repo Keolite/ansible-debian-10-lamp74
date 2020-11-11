@@ -8,5 +8,13 @@
     src: mysql_conf.j2
     dest: "/etc/apache2/sites-available/mysql.dev.vm.conf"
 
+- name: add subdomaine
+  template:
+    src: projet_conf.j2
+    dest: "/etc/apache2/sites-available/{{ projet_hostname }}.conf"
+
 - name: a2ensite {{ mysql_hostname }}
   command: a2ensite {{ mysql_hostname }}
+
+- name: a2ensite {{ projet_hostname }}
+  command: a2ensite {{ projet_hostname }}
