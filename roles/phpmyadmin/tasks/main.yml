@@ -262,9 +262,9 @@
   become_user: www-data
 
 - name: Remove directory
-    file:
-      path: /var/www/html/phpmyadmin/setup
-      state: absent
+  file:
+    path: /var/www/html/phpmyadmin/setup
+    state: absent
 
 
 
