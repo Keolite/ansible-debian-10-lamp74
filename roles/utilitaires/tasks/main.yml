@@ -4,4 +4,5 @@
       - curl
       - zip
       - unzip
+      - git
     state: present
