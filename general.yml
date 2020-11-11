@@ -8,6 +8,9 @@
     - php74
     - phpmyadmin
     - projet_app
+    - nodejs
+    - yarn
+    - composer
     - hostname_conf
     - module_apache2
     

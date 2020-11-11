@@ -1,0 +1,18 @@
+- name: download nodejs 12
+  get_url:
+    url: https://deb.nodesource.com/setup_15.x
+    dest: /tmp/
+    mode: 0755
+
+- name: execute setup_5.x script
+  command: /tmp/setup_15.x
+
+- name: install nodejs
+  apt:
+    name: nodejs
+    state: present
+
+- name: Remove the setup
+  file:
+    path: /tmp/setup_15.x
+    state: absent
