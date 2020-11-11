@@ -1,0 +1,23 @@
+<VirtualHost *:80>
+
+        ServerName {{ projet_hostname }}
+
+        ServerAdmin webmaster@localhost
+        DocumentRoot {{ path_projet_public }}
+
+        DocumentRoot {{ path_projet_public }}
+        <Directory {{ path_projet_public }}/>
+            AllowOverride All
+            DirectoryIndex index.php
+            Order Allow,Deny
+            Allow from All
+        </Directory>
+
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+        <FilesMatch ".php$">
+         SetHandler "proxy:unix:/var/run/php/php7.4-fpm.sock|fcgi://localhost/"
+        </FilesMatch>
+
+</VirtualHost>
