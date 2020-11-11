@@ -3,3 +3,4 @@ password_root_mysql: 1234
 url_phpmyadmin: https://files.phpmyadmin.net/phpMyAdmin/5.0.4/phpMyAdmin-5.0.4-all-languages.zip
 directory_phpmyadmin_to_rename: phpMyAdmin-5.0.4-all-languages
 mysql_hostname: mysql.dev.vm
+path_projet: /var/www/projet

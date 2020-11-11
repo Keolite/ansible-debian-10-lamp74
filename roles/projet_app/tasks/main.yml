@@ -1,0 +1,8 @@
+- name: mkdir adminer
+  file:
+    path: "{{ path_projet }}"
+    state: directory
+    mode: 0755
+    recurse: yes
+  become: yes
+  become_user: www
