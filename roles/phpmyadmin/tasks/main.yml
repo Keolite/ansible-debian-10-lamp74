@@ -16,8 +16,7 @@
     regexp: '^(.*)blowfish_secret(.*)$'
     line: "$cfg['blowfish_secret'] = '6PsUICt;G:KBeyW-5waDBv}IGxrq}[mX';"
     backrefs: yes
-  become: yes
-  become_user: www-data
+ 
 
 - name: Change path into pckage.json for script
   lineinfile:
@@ -25,8 +24,7 @@
     regexp: '^(.*)controluser(.*)$'
     line: "$cfg['Servers'][$i]['controluser'] = 'pma';"
     backrefs: yes
-  become: yes
-  become_user: www-data
+  
 
 - name: Change path into pckage.json for script
   lineinfile:
@@ -34,8 +32,7 @@
     regexp: '^(.*)controlpass(.*)$'
     line: "$cfg['Servers'][$i]['controlpass'] = '4321';"
     backrefs: yes
-  become: yes
-  become_user: www-data
+  
 
 - name: Change path into pckage.json for script
   lineinfile:
@@ -43,8 +40,7 @@
     regexp: '^(.*)pmadb(.*)$'
     line: "$cfg['Servers'][$i]['pmadb'] = 'phpmyadmin';"
     backrefs: yes
-  become: yes
-  become_user: www-data
+  
 
 - name: Change path into pckage.json for script
   lineinfile:
@@ -52,8 +48,7 @@
     regexp: '^(.*)bookmarktable(.*)$'
     line: "$cfg['Servers'][$i]['bookmarktable'] = 'pma__bookmark';"
     backrefs: yes
-  become: yes
-  become_user: www-data
+ 
 
 - name: Change path into pckage.json for script
   lineinfile:
@@ -61,8 +56,7 @@
     regexp: '^(.*)relation(.*)$'
     line: "$cfg['Servers'][$i]['relation'] = 'pma__relation';"
     backrefs: yes
-  become: yes
-  become_user: www-data
+  
 
 - name: Change path into pckage.json for script
   lineinfile:
@@ -70,8 +64,7 @@
     regexp: '^(.*)table_info(.*)$'
     line: "$cfg['Servers'][$i]['table_info'] = 'pma__table_info';"
     backrefs: yes
-  become: yes
-  become_user: www-data
+  
 
 - name: Change path into pckage.json for script
   lineinfile:
@@ -79,8 +72,7 @@
     regexp: '^(.*)table_coords(.*)$'
     line: "$cfg['Servers'][$i]['table_coords'] = 'pma__table_coords';"
     backrefs: yes
-  become: yes
-  become_user: www-data
+  
 
 - name: Change path into pckage.json for script
   lineinfile:
@@ -88,8 +80,7 @@
     regexp: '^(.*)pdf_pages(.*)$'
     line: "$cfg['Servers'][$i]['pdf_pages'] = 'pma__pdf_pages';"
     backrefs: yes
-  become: yes
-  become_user: www-data
+  
 
 - name: Change path into pckage.json for script
   lineinfile:
@@ -97,8 +88,7 @@
     regexp: '^(.*)column_info(.*)$'
     line: "$cfg['Servers'][$i]['column_info'] = 'pma__column_info';"
     backrefs: yes
-  become: yes
-  become_user: www-data
+  
 
 - name: Change path into pckage.json for script
   lineinfile:
@@ -106,8 +96,7 @@
     regexp: "^(.*)\\['history'\\](.*)$"
     line: "$cfg['Servers'][$i]['history'] = 'pma__history';"
     backrefs: yes
-  become: yes
-  become_user: www-data
+  
 
 - name: Change path into pckage.json for script
   lineinfile:
@@ -115,8 +104,7 @@
     regexp: '^(.*)table_uiprefs(.*)$'
     line: "$cfg['Servers'][$i]['table_uiprefs'] = 'pma__table_uiprefs';"
     backrefs: yes
-  become: yes
-  become_user: www-data
+  
 
 - name: Change path into pckage.json for script
   lineinfile:
@@ -124,17 +112,14 @@
     regexp: '^(.*)tracking(.*)$'
     line: "$cfg['Servers'][$i]['tracking'] = 'pma__tracking';"
     backrefs: yes
-  become: yes
-  become_user: www-data
-
+  
 - name: Change path into pckage.json for script
   lineinfile:
     path: /var/www/html/phpmyadmin/config.inc.php
     regexp: '^(.*)userconfig(.*)$'
     line: "$cfg['Servers'][$i]['userconfig'] = 'pma__userconfig';"
     backrefs: yes
-  become: yes
-  become_user: www-data
+  
 
 - name: Change path into pckage.json for script
   lineinfile:
@@ -142,8 +127,7 @@
     regexp: '^(.*)recent(.*)$'
     line: "$cfg['Servers'][$i]['recent'] = 'pma__recent';"
     backrefs: yes
-  become: yes
-  become_user: www-data
+  
 
 - name: Change path into pckage.json for script
   lineinfile:
@@ -151,8 +135,7 @@
     regexp: '^(.*)favorite(.*)$'
     line: "$cfg['Servers'][$i]['favorite'] = 'pma__favorite';"
     backrefs: yes
-  become: yes
-  become_user: www-data
+  
 
 - name: Change path into pckage.json for script
   lineinfile:
@@ -160,8 +143,7 @@
     regexp: "^(.*)\\['users'\\](.*)$"
     line: "$cfg['Servers'][$i]['users'] = 'pma__users';"
     backrefs: yes
-  become: yes
-  become_user: www-data
+  
 
 - name: Change path into pckage.json for script
   lineinfile:
@@ -169,8 +151,7 @@
     regexp: '^(.*)usergroups(.*)$'
     line: "$cfg['Servers'][$i]['usergroups'] = 'pma__usergroups';"
     backrefs: yes
-  become: yes
-  become_user: www-data
+  
 
 - name: Change path into pckage.json for script
   lineinfile:
@@ -178,8 +159,7 @@
     regexp: '^(.*)navigationhiding(.*)$'
     line: "$cfg['Servers'][$i]['navigationhiding'] = 'pma__navigationhiding';"
     backrefs: yes
-  become: yes
-  become_user: www-data
+  
 
 - name: Change path into pckage.json for script
   lineinfile:
@@ -187,8 +167,7 @@
     regexp: '^(.*)savedsearches(.*)$'
     line: "$cfg['Servers'][$i]['savedsearches'] = 'pma__savedsearches';"
     backrefs: yes
-  become: yes
-  become_user: www-data
+  
 
 
 - name: Change path into pckage.json for script
@@ -197,8 +176,7 @@
     regexp: '^(.*)central_columns(.*)$'
     line: "$cfg['Servers'][$i]['central_columns'] = 'pma__central_columns';"
     backrefs: yes
-  become: yes
-  become_user: www-data
+  
 
 - name: Change path into pckage.json for script
   lineinfile:
@@ -206,8 +184,7 @@
     regexp: '^(.*)designer_settings(.*)$'
     line: "$cfg['Servers'][$i]['designer_settings'] = 'pma__designer_settings';"
     backrefs: yes
-  become: yes
-  become_user: www-data
+  
 
 - name: Change path into pckage.json for script
   lineinfile:
@@ -215,9 +192,7 @@
     regexp: '^(.*)export_templates(.*)$'
     line: "$cfg['Servers'][$i]['export_templates'] = 'pma__export_templates';"
     backrefs: yes
-  become: yes
-  become_user: www-data
-
+  
 - name: Create a new database with name 'bobdata'
   mysql_db:
     name: phpmyadmin
@@ -250,21 +225,26 @@
     state: directory
     mode: 0755
     recurse: yes
-  become: yes
-  become_user: www-data
+  
 
 - name: line insert
   lineinfile:
     path: /var/www/html/phpmyadmin/config.inc.php
     line: "$cfg['TempDir'] = '/var/www/html/phpmyadmin/tmp';"
     insertafter: EOF
-  become: yes
-  become_user: www-data
+  
 
 - name: Remove directory
   file:
     path: /var/www/html/phpmyadmin/setup
     state: absent
+    
+- name: Give insecure permissions to an existing file
+  ansible.builtin.file:
+    path: /var/www/htmlphpmyadmin
+    owner: www-data
+    group: www-data
+    mode: '0755'
 
 
 
